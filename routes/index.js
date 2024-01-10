@@ -1,6 +1,6 @@
 var express = require('express')
 var routes = express.Router()
-var sock = require('../bin/www')
+//var sock = require('../bin/www')
 var Outletsque = require('../models/connect_que')
 var UserAgent = require('../models/connect_users')
 var DailyActivities = require('../models/daily_activity')

@@ -54,7 +54,6 @@
     "popper.js": "^1.16.1",
     "puse-icons-feather": "1.1.0",
     "simple-line-icons": "2.4.1",
-    "socket.io": "^4.6.1",
     "ti-icons": "^0.1.2",
     "typicons.font": "^2.0.9"
   }

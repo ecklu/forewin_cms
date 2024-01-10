@@ -7,7 +7,7 @@
 var app = require('../app');
 var debug = require('debug')('myapp:server');
 var http = require('http');
-var {Server} =require('socket.io')
+//var {Server} =require('socket.io')
 
 
 /**
@@ -22,7 +22,7 @@ app.set('port', port);
  */
 
 var server = http.createServer(app);
-var io = new Server(server);
+/*var io = new Server(server);*/
 
 
 /**
@@ -93,4 +93,4 @@ function onListening() {
   debug('Listening on ' + bind);
 }
 
-exports.sock = io;
+//exports.sock = io;
