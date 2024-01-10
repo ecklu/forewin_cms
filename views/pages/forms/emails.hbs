@@ -1,0 +1,74 @@
+
+
+
+
+<!-- Page Loader -->
+<div class="page-loader-wrapper">
+    <span class="loader"><span class="loader-inner"></span></span>
+</div>
+
+<div id="app">
+    <div class="main-wrapper main-wrapper-1">
+        <div class="navbar-bg"></div>
+
+{{>nav}}
+{{>sidemenu}}
+        <!-- Start app main Content -->
+        <div class="main-content">
+            <section class="section">
+                <div class="section-header">
+                    <h1>Create Email</h1>
+
+                </div>
+
+                <div class="section-body">
+                    <h2 class="section-title">Fill In Email Details</h2>
+
+
+                    <div class="row">
+                        <div class="col-12 col-md-12 col-lg-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4>Email Details</h4>
+                                </div>
+                                <div class="card-body">
+                                    <!--Starting point for forms-->
+                                    <form action="/connect/create_email" method="POST" >
+                                    <div class="form-group">
+                                        <label>User Name</label>
+                                        <input type="text" name="username" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Email</label>
+                                        <input type="email" name="email" class="form-control">
+                                    </div>
+
+
+
+
+
+
+                                    <div class="card-footer text-right">
+                                    <button class="btn btn-primary mr-1" type="submit">Submit</button>
+
+                                    </div>
+
+
+
+                                    </form>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Start app Footer part -->
+        {{>footer}}
+    </div>
+</div>
+

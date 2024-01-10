@@ -1,0 +1,107 @@
+
+<!-- Page Loader -->
+<div class="page-loader-wrapper">
+    <span class="loader"><span class="loader-inner"></span></span>
+</div>
+
+<div id="app">
+<div class="main-wrapper main-wrapper-1">
+    <div class="navbar-bg"></div>
+{{>nav}}
+{{>sidemenu}}
+    
+
+
+    <!-- Start app main Content -->
+    <div class="main-content">
+        <section class="section">
+            <div class="section-header">
+                <h1>Table</h1>
+              
+            </div>
+
+            <div class="section-body">
+                <h2 class="section-title">Outlets</h2>
+               
+
+                <div class="row">
+                    <div class="col-12 col-md-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Outlets</h4>
+                            </div>
+                            <div class="card-body">
+         <table id="example" class="table table-striped table-bordered" style="width:100%">
+        <thead>
+            <tr>
+                <th>User Name</th>
+                <th>Contact</th>
+
+               <th>Actions</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+             {{#each users}}
+                 <tr>
+                                        
+                    <td>{{this.name}}</td>
+                    <td>{{this.phoneNumber}}</td>
+                   <td><a href="/connect/daily_activity/{{this._id}}"><button class="btn btn-success btn-sm rounded-0" type="button"  data-toggle="tooltip"  data-placement="top" title="View User Outlet"><i class="fa-solid fa-street-view"></i></button></a></td>
+                </tr>
+            {{/each}}
+             </tbody>
+        <tfoot>
+            <tr>
+                 <th>User Name</th>
+                   <th>Contact</th>
+
+                   <th>Actions</th>
+            </tr>
+        </tfoot>
+    </table>
+
+
+                                <!--<table class="table">
+                                    <thead>
+                                    <tr>
+                                        
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Phone Number</th>
+                                        <th scope="col">Date</th>
+                                        <th scope="col">Actions</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                        {{#each users}}
+                                    <tr>
+                                        
+                                        <td>{{this.name}}</td>
+                                        <td>{{this.phoneNumber}}</td>
+                                        <td>{{this.createdAt}}</td>
+                                        
+                                        <td><a href="/connect/user_outlets/{{this._id}}"><button class="btn btn-success btn-sm rounded-0" type="button"  data-toggle="tooltip"  data-placement="top" title="View User Outlet"><i class="fa-solid fa-street-view"></i></button></a></td>
+                                    </tr>
+                                   {{/each}}
+                                    </tbody>
+                                </table>-->
+                            </div>
+                        </div>
+                      
+                       
+                         <!--end-->
+                      
+                    </div>
+
+                </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Start app Footer part -->
+    {{>footer}}
+</div>
+</div>
+

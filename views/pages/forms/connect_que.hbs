@@ -1,0 +1,88 @@
+
+
+
+
+<!-- Page Loader -->
+<div class="page-loader-wrapper">
+    <span class="loader"><span class="loader-inner"></span></span>
+</div>
+
+<div id="app">
+    <div class="main-wrapper main-wrapper-1">
+        <div class="navbar-bg"></div>
+
+{{>nav}}
+{{>sidemenu}}
+        <!-- Start app main Content -->
+        <div class="main-content">
+            <section class="section">
+                <div class="section-header">
+                    <h1>Create Outlets</h1>
+                    
+                </div>
+
+                <div class="section-body">
+                    <h2 class="section-title">Fill In Outlet Details</h2>
+                   
+
+                    <div class="row">
+                        <div class="col-12 col-md-12 col-lg-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4>Outlet Details</h4>
+                                </div>
+                                <div class="card-body">
+                                    <!--Starting point for forms-->
+                                    <form action="/connect/connect_que" method="POST" >
+                                    <div class="form-group">
+                                        <label>Name Of Outlet</label>
+                                        <input type="text" name="outlet" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>City</label>
+                                        <input type="text" name="city" class="form-control">
+                                    </div>
+                                     
+
+
+                                     <div class="form-group">
+                                        <label>Region</label>
+                                        <input type="text" name="region" class="form-control">
+                                    </div>
+
+                                    <div class="form-group">
+                                                                            <label>Latitude</label>
+                                                                            <input type="text" name="lat" class="form-control">
+                                                                        </div>
+
+                                  <div class="form-group">
+                                                                          <label>Longitude</label>
+                                                                          <input type="text" name="long" class="form-control">
+                                                                      </div>
+
+
+
+                                    <div class="card-footer text-right">
+                                    <button class="btn btn-primary mr-1" type="submit">Submit</button>
+                     
+                                    </div>
+
+
+                                    
+                                    </form>
+                                </div>
+                            </div>
+                            
+                           
+                        </div>
+                   
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <!-- Start app Footer part -->
+        {{>footer}}
+    </div>
+</div>
+

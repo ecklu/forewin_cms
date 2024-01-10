@@ -1,0 +1,69 @@
+
+<!-- Page Loader -->
+<div class="page-loader-wrapper">
+    <span class="loader"><span class="loader-inner"></span></span>
+</div>
+
+<div id="app">
+<div class="main-wrapper main-wrapper-1">
+    <div class="navbar-bg"></div>
+{{>nav}}
+{{>sidemenu}}
+    
+
+
+    <!-- Start app main Content -->
+    <div class="main-content">
+        <section class="section">
+            <div class="section-header">
+                <h1>Map</h1>
+              
+            </div>
+
+            <div class="section-body">
+                <h2 class="section-title">Shop Map</h2>
+               
+
+                <div class="row">
+                    <div class="col-12 col-md-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Outlets</h4>
+                            </div>
+                            <div class="card-body">
+                              <h3>Forewin Map</h3>
+    <!--The div element for the map -->
+    <div id="map"></div>
+
+    <!-- 
+      The `defer` attribute causes the callback to execute after the full HTML
+      document has been parsed. For non-blocking uses, avoiding race conditions,
+      and consistent behavior across browsers, consider loading using Promises
+      with https://www.npmjs.com/package/@googlemaps/js-api-loader.
+      -->
+   <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBs_EYhZhJyuznKP7vI4DZBUaEP78Em3JQ&callback=initMap&v=weekly"
+      defer
+    ></script>
+                            </div>
+                        </div>
+                      
+                       
+                         <!--end-->
+                      
+                    </div>
+
+                </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Start app Footer part -->
+    {{>footer}}
+</div>
+</div>
+
+    
+

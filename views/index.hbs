@@ -1,0 +1,180 @@
+
+
+<!-- Page Loader -->
+<div class="page-loader-wrapper">
+    <span class="loader"><span class="loader-inner"></span></span>
+</div>
+
+<div id="app">
+    <div class="main-wrapper main-wrapper-1">
+        <div class="navbar-bg"></div>
+        
+{{>nav}}
+
+      {{>sidemenu}}
+      <script>
+
+      
+
+  
+
+</script>
+
+        <!-- Start app main Content -->
+        <div class="main-content">
+            <section class="section">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                         <div class="card card-statistic-2">
+                       
+                        <div class="card-icon shadow-primary bg-primary">
+                        <i class="fas fa-shopping-bag"></i>
+                        </div>
+                        <div class="card-wrap">
+                        <div class="card-header">
+                            <h4>Total Shops</h4>
+                        </div>
+                        <div class="card-body">
+                            {{tout.sumOutlet}}
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="card card-statistic-2">
+                        
+                        <div class="card-icon shadow-primary bg-primary">
+                        <i class="fas fa-shopping-bag"></i>
+                        </div>
+                        <div class="card-wrap">
+                        <div class="card-header">
+                            <h4>Total Agents</h4>
+                        </div>
+                        <div  class="card-body">
+                            {{tagent.sumAgent}}
+                          <!-- <span id ="sample">0</span>-->
+
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="card card-statistic-2">
+                        
+                        <div class="card-icon shadow-primary bg-primary">
+                        <i class="fas fa-shopping-bag"></i>
+                        </div>
+                        <div class="card-wrap">
+                        <div class="card-header">
+                            <h4>Active Agent</h4>
+                        </div>
+                        <div class="card-body">
+                            {{active}}
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+               
+               
+                <!--end-->
+                <div class="row row-deck">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Daily Activity</h4>
+                                <a href="/report/export"> <button class="btn btn-primary mr-1" type="submit">CSV</button></a>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="table-responsive table-invoice">
+
+                                  <table id="example" class="table table-striped table-bordered" style="width:100%">
+             <thead>
+            <tr>
+                <th>ID</th>
+                <th>Outlet Name</th>
+               <th>Pinned By</th>
+               <th>Punch In Time</th>
+               <th>Punch Out Time</th>
+             
+            </tr>
+        </thead>
+        
+        <tbody>
+             {{#each activity}}
+                                    <tr>
+                                        <td><a href="#">INV-87239</a></td>
+                                        <td >{{this.outlet}}</td>
+                                        <td>{{this.userId.name}}</td>
+
+                                        <td>{{this.punchInTime}}</td>
+                                       <td>{{this.punchOutTime}}</td>
+                                    </tr>
+             {{/each}}
+             </tbody>
+        <tfoot>
+            <tr>
+               <th>ID</th>
+                <th>Outlet Name</th>
+                  <th>Pinned By</th>
+                 <th>Punch In Time</th>
+                  <th>Punch Out Time</th>
+            </tr>
+        </tfoot>
+    </table>
+
+
+
+
+
+
+
+
+                                    <!--<table class="table table-striped">
+                                    <tr>
+                                        <th> ID</th>
+                                        <th>Shop Name</th>
+                                        <th>Contact</th>
+                                        <th>Shop Type</th>
+                                        <th>Date</th>
+                                    </tr>
+                                    {{#each data}}
+                                    <tr>
+                                        <td><a href="#">INV-87239</a></td>
+                                        <td id = "sample"class="font-weight-600">{{this.shop_name}}</td>
+                                        <td class="font-weight-600">{{this.contact}}</td>
+                                        <td class="font-weight-600">{{this.shop_type}}</td>
+                                        <td class="font-weight-600">{{this.dates}}</td>
+                                       
+                                    </tr>
+                                    {{/each}}
+                                   
+                                    </table>-->
+                                    <div id="display">
+
+                                    </div>
+                                    <!--<p id="sample">{{sample.name}}</p>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <!--end-->
+                </div>
+            </section>
+        </div>
+
+        <!-- Start app Footer part -->
+        {{>footer}}
+    </div>
+</div>
+<script>
+    var nams = "{{sample}}"
+    nams.forEach(function(data){
+        console.log(data)
+    })
+   
+   
+</script>
+
+

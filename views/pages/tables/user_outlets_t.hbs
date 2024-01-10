@@ -1,0 +1,109 @@
+
+<!-- Page Loader -->
+<div class="page-loader-wrapper">
+    <span class="loader"><span class="loader-inner"></span></span>
+</div>
+
+<div id="app">
+<div class="main-wrapper main-wrapper-1">
+    <div class="navbar-bg"></div>
+{{>nav}}
+{{>sidemenu}}
+    
+
+
+    <!-- Start app main Content -->
+    <div class="main-content">
+        <section class="section">
+            <div class="section-header">
+                <h1>Table</h1>
+              
+            </div>
+
+            <div class="section-body">
+                <h2 class="section-title">Outlets</h2>
+               
+
+                <div class="row">
+                    <div class="col-12 col-md-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Outlet Details</h4>
+                            </div>
+                            <div class="card-body">
+                                <table id="example" class="table table-striped table-bordered" style="width:100%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Actions</th>
+               
+            </tr>
+        </thead>
+        
+        <tbody>
+             {{#each outlets}}
+            <tr>
+                 <td>{{this.shop_name}}</td>
+                <td>{{this.dates}}</td>
+                <td><a href="/connect/outlet_feed/{{this._id}}"><button class="btn btn-success btn-sm rounded-0" type="button"  data-toggle="tooltip"  data-placement="top" title="View User Outlet"><i class="fa-solid fa-users-viewfinder"></i></button></a>
+                    <a href="/connect/connectoutlet_edit/{{this._id}}"><button class="btn btn-success btn-sm rounded-0" type="button"  data-toggle="tooltip"  data-placement="top" title="Edit User Outlet"><i class="fa-solid fa-user-pen"></i></button></a>
+                    <a href="/connect/outlet/delete/{{this._id}}"><button class="btn btn-danger btn-sm rounded-0" type="button"  data-toggle="tooltip"  data-placement="top" title="Delete User Outlets"><i class="fa-solid fa-trash"></i></button></a>
+                </td>                      
+            </tr>
+             {{/each}}
+             </tbody>
+        <tfoot>
+            <tr>
+                 <th>Name</th>
+                <th>Date</th>
+                <th>Actions</th>
+            </tr>
+        </tfoot>
+    </table>
+                                <!--<table class="table">
+                                    <thead>
+                                    <tr>
+                                        
+                                        <th scope="col">Name</th>
+                                        <th></th>
+                                         <th scope="col">Date</th>
+                                        <th scope="col">Actions</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                        {{#each outlets}}
+                                    <tr>
+                                        
+                                        <td>{{this.shop_name}}</td>
+                                        <td></td>
+                                        <td>{{this.dates}}</td>
+                                        
+                                        <td><a href="/connect/outlet_feed/{{this._id}}"><button class="btn btn-success btn-sm rounded-0" type="button"  data-toggle="tooltip"  data-placement="top" title="View User Outlet"><i class="fa-solid fa-users-viewfinder"></i></button></a>
+                                            <a href="/connect/connectoutlet_edit/{{this._id}}"><button class="btn btn-success btn-sm rounded-0" type="button"  data-toggle="tooltip"  data-placement="top" title="Edit User Outlet"><i class="fa-solid fa-user-pen"></i></button></a>
+                                            <a href="/connect/outlet/delete/{{this._id}}"><button class="btn btn-danger btn-sm rounded-0" type="button"  data-toggle="tooltip"  data-placement="top" title="Delete User Outlets"><i class="fa-solid fa-trash"></i></button></a>
+                                        </td>
+                                    </tr>
+                                   {{/each}}
+                                    </tbody>
+                                </table>-->
+                            </div>
+                        </div>
+                      
+                       
+                         <!--end-->
+                      
+                    </div>
+
+                </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Start app Footer part -->
+    {{>footer}}
+</div>
+</div>
+

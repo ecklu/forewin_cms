@@ -1,0 +1,135 @@
+
+<!-- Page Loader -->
+<div class="page-loader-wrapper">
+    <span class="loader"><span class="loader-inner"></span></span>
+</div>
+
+<div id="app">
+<div class="main-wrapper main-wrapper-1">
+    <div class="navbar-bg"></div>
+{{>nav}}
+{{>sidemenu}}
+    
+
+
+    <!-- Start app main Content -->
+    <div class="main-content">
+        <section class="section">
+            <div class="section-header">
+                <h1>Table</h1>
+              
+            </div>
+
+            <div class="section-body">
+                <h2 class="section-title">Outlets</h2>
+               
+
+                <div class="row">
+                    <div class="col-12 col-md-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Outlet Details</h4>
+                            </div>
+                            
+                            <div class="card-body">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        
+                                        <th scope="col">Questions</th>
+                                        <th></th>
+                                        <th></th>
+                                        <th>Answers</th>
+                                        
+                
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                       
+                                    <tr>
+                                        <td>Shop Name</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>{{outlets.shop_name}}</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td>Contact Number</td>
+                                         <td></td>
+                                        <td></td>
+                                        <td>{{outlets.contact}}</td>
+                                        
+                                    </tr>
+                                     <tr>
+                                        <td>Email</td>
+                                         <td></td>
+                                        <td></td>
+                                        <td>{{outlets.email}}</td>
+                                        
+                                    </tr>
+                                     <tr>
+                                        <td>Location</td>
+                                         <td></td>
+                                        <td></td>
+                                        <td>{{outlets.area_location}}</td>
+                                        
+                                    </tr>
+                                     <tr>
+                                        <td>Shop Type</td>
+                                         <td></td>
+                                        <td></td>
+                                        <td>{{outlets.shop_type}}</td>
+                                        
+                                    </tr>
+                                     <tr>
+                                        <td>Cordinates Latitde</td>
+                                         <td></td>
+                                        <td></td>
+                                        <td>{{outlets.lat}}</td>
+                                        
+                                    </tr>
+                                      <tr>
+                                        <td>Cordinates Longitude</td>
+                                         <td></td>
+                                        <td></td>
+                                        <td>{{outlets.long}}</td>
+                                        
+                                    </tr>
+                                     <tr>
+                                        <td>Shop Image</td>
+                                         <td></td>
+                                        <td></td>
+                                        <td><img src="{{outlets.file}}" width="200" height="150"/></td>
+                                        
+                                    </tr>
+                                     </tr>
+                                      <tr>
+                                        <td>Date</td>
+                                         <td></td>
+                                        <td></td>
+                                        <td>{{outlets.dates}}</td>
+                                        
+                                    </tr>
+                                  
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                      
+                       
+                         <!--end-->
+                      
+                    </div>
+
+                </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Start app Footer part -->
+   {{>footer}}
+</div>
+</div>
+
