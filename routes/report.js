@@ -74,7 +74,7 @@ router.get('/export', async (req, res) => {
 
 
 // Schedule the cron job to run at 6:00 am every day
-cron.schedule('* * * * *', async () => {
+/*cron.schedule('* * * * *', async () => {
   try {
     const data = await Daily_activities.find({}).populate('userId').lean(); // Fetch data from MongoDB
 
@@ -147,6 +147,6 @@ cron.schedule('* * * * *', async () => {
   } catch (error) {
     console.error('Error exporting data:', error);
   }
-});
+});*/
 
 module.exports = router;
