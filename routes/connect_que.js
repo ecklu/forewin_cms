@@ -5,6 +5,10 @@ const nodemailer = require('nodemailer');
 const smtpTransport = require('nodemailer-smtp-transport')
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 const fs = require('fs');
+
+const AWS = require("aws-sdk");
+const s3 = new AWS.S3()
+
 var Shops = require('../models/connect_que')
 var Activity_details = require('../models/daily_activity_details')
 const Daily_activities = require('../models/daily_activity');
@@ -212,10 +216,10 @@ router.get('/connect',function(req,res){
 
 
 
-      router.get('/email',async function(req,res){
 
 
-                   try {
+
+                   /*try {
                       const data = await Daily_activities.find({}).populate('userId').lean(); // Fetch data from MongoDB
 
                       // Define the columns you want to include in the CSV and their headers
@@ -286,8 +290,95 @@ router.get('/connect',function(req,res){
                       })
                     } catch (error) {
                       console.error('Error exporting data:', error);
-                    }
+                    }*/
 
-                })
+
+
+                  
+                   router.get('/email', async function (req, res) {
+                     try {
+                       // Get data from MongoDB
+                       const data = await Daily_activities.find({}).populate('userId').lean();
+
+                       // Define the columns you want to include in the CSV
+                       const columns = [
+                         { id: 'outlet', title: 'Outlet' },
+                         { id: 'pinnedby', title: 'PinnedBy' },
+                         { id: 'punchInTime', title: 'Punch In Time' },
+                         { id: 'punchOutTime', title: 'Punch Out Time' },
+                         // Add more columns as needed
+                       ];
+
+                       // Transform the data to include only the desired columns
+                       const transformedData = data.map(item => ({
+                         outlet: item.outlet,
+                         pinnedby: item.userId.name,
+                         punchInTime: item.punchInTime,
+                         punchOutTime: item.punchOutTime,
+                         // Map additional columns as needed
+                       }));
+
+                       // Write data to CSV
+                       const csvWriter = createCsvWriter({
+                         path: 'exported_data.csv',
+                         header: columns,
+                       });
+
+                       await csvWriter.writeRecords(transformedData);
+
+                       // Store CSV file in S3 bucket
+                       await s3.putObject({
+                         Bucket: 'cyclic-fair-erin-vulture-fez-eu-west-2',
+                         Key: 'some_files/exported_data.csv',
+                         Body: require('fs').createReadStream('exported_data.csv'),
+                       }).promise();
+
+                       // Email sending logic outside the cron job
+                       Email.find({})
+                         .then(email => {
+                           email.forEach(function (data) {
+                             const myEmails = data.email; //'ecklujohn@gmail.com';
+                             console.log(myEmails);
+
+                             const transporter = nodemailer.createTransport(
+                               smtpTransport({
+                                 service: 'gmail',
+                                 host: 'smtp.gmail.com',
+                                 auth: {
+                                   user: 'forewinghana068@gmail.com',
+                                   pass: 'mibt ubnk ndag guhn',
+                                 },
+                               })
+                             );
+
+                             const mailOptions = {
+                               from: 'forewinghana068@gmail.com',
+                               to: myEmails,
+                               subject: 'Sample Subject',
+                               text: 'Sample Text', // You can add a text body if needed
+                               attachments: [
+                                 {
+                                   filename: 'exported_data.csv',
+                                   path: 'exported_data.csv',
+                                 },
+                               ],
+                             };
+
+                             transporter.sendMail(mailOptions, function (error, info) {
+                               if (error) {
+                                 console.log(error);
+                               } else {
+                                 console.log('Email sent: ' + info.response);
+                               }
+                             });
+                           });
+                         });
+
+                       console.log('Email sent successfully');
+                     } catch (error) {
+                       console.error('Error exporting data:', error);
+                     }
+                   });
+
 
 module.exports= router;

@@ -14,6 +14,7 @@
   "dependencies": {
     "@handlebars/allow-prototype-access": "^1.0.5",
     "@mdi/font": "3.3.92",
+    "aws-sdk": "^2.1533.0",
     "bcrypt": "^5.1.0",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.19.0",
